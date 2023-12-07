@@ -40,9 +40,9 @@ const horoscopeDiv = document.getElementById('horoscope-text')
 const horoscopeBtn = document.getElementById('start-btn')
 
 
-const handleText = () => {
-    event.preventDefault();
-    
+const handleText = (e) => {
+    e.preventDefault();
+
     const randomNum1 = Math.floor(Math.random() * prompt1.length)
     const randomNum2 = Math.floor(Math.random() * prompt2.length)
     const randomNum3 = Math.floor(Math.random() * prompt3.length)
@@ -53,3 +53,5 @@ const handleText = () => {
 }
 
 horoscopeBtn.addEventListener("click", handleText);
+
+

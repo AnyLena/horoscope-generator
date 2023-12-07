@@ -55,3 +55,10 @@ const handleText = (e) => {
 horoscopeBtn.addEventListener("click", handleText);
 
 
+for (let i = 0; i < 100; i++) { // create 100 stars
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * window.innerWidth + 'px'; 
+    star.style.top = Math.random() * window.innerHeight + 'px'; 
+    document.body.appendChild(star);
+}

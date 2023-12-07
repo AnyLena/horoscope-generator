@@ -53,9 +53,11 @@ const handleText = (e) => {
   const horoscope = `${prompt1[randomNum1]} ${prompt2[randomNum2]} ${prompt3[randomNum3]}`;
 
   horoscopeDiv.innerHTML = horoscope;
+
+  horoscopeBtn.removeEventListener("click", handleText)
 };
 
-horoscopeBtn.addEventListener("click", handleText);
+// horoscopeBtn.addEventListener("click", handleText);
 
 // Creating Dropdown With Star Signs That Has no Other Use Than Looking Authentic
 
@@ -72,6 +74,10 @@ const handleStar = (e) => {
   dropdownClick.innerHTML = capitalized;
 
   dropdown.classList.remove("show");
+
+  horoscopeBtn.addEventListener("click", handleText);
+
+  horoscopeDiv.innerHTML = '';
 };
 
 starSigns.forEach((element) => element.addEventListener("click", handleStar));

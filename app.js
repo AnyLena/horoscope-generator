@@ -35,11 +35,21 @@ const prompt3 = [
   "You will find success by following your intuition and taking risks.",
 ];
 
-const randomNum1 = Math.floor(Math.random() * prompt1.length)
 
-const randomNum2 = Math.floor(Math.random() * prompt2.length)
-
-const randomNum3 = Math.floor(Math.random() * prompt3.length)
+const horoscopeDiv = document.getElementById('horoscope-text')
+const horoscopeBtn = document.getElementById('start-btn')
 
 
-console.log(`${prompt1[randomNum1]} ${prompt2[randomNum2]} ${prompt3[randomNum3]}`)
+const handleText = () => {
+    event.preventDefault();
+    
+    const randomNum1 = Math.floor(Math.random() * prompt1.length)
+    const randomNum2 = Math.floor(Math.random() * prompt2.length)
+    const randomNum3 = Math.floor(Math.random() * prompt3.length)
+    
+    const horoscope = `${prompt1[randomNum1]} ${prompt2[randomNum2]} ${prompt3[randomNum3]}`
+    
+    horoscopeDiv.innerHTML = horoscope
+}
+
+horoscopeBtn.addEventListener("click", handleText);
